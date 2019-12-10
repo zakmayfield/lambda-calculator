@@ -1,4 +1,7 @@
 import React from "react";
+import { specials } from '../../../data';
+
+const [specials, setSpecials] = useState(specials);
 
 //import any components needed
 
@@ -15,3 +18,5 @@ const Specials = () => {
     </div>
   );
 };
+
+export default Specials

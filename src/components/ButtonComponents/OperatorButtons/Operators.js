@@ -1,4 +1,7 @@
 import React from "react";
+import { operators } from '../../../data';
+
+const [operations, setOperations] = useState(operations);
 
 //import any components needed
 
@@ -14,3 +17,5 @@ const Operators = () => {
     </div>
   );
 };
+
+export default Operators
