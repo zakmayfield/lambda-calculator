@@ -1,9 +1,9 @@
 import React from "react";
 
-const OperatorButton = () => {
+const OperatorButton = (props) => {
   return (
     <>
-      {/* Display a button element rendering the data being passed down from the parent container on props */}
+      <p style={{margin: '40px', fontSize: '1.5rem', cursor: 'pointer'}} >{ props.operator.char }</p>
     </>
   );
 };

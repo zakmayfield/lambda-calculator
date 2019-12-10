@@ -1,23 +1,30 @@
-import React from "react";
+import React, {useState} from "react";
 
-import { numbers } from '../../../data';
+import NumberButton from './NumberButton';
 
-const [numbers, setNumbers] = useState(numbers);
+import Display from '../../DisplayComponents/Display';
 
-//import any components needed
-// example of import from data.js. Note all the ../   This is how we move through folders. 
-/* 
-import { numbers } from '../../../data' 
-*/
-//Import your array data to from the provided data file
+import { numbers as numberData } from '../../../data';
 
-const Numbers = () => {
-  // STEP 2 - add the imported data to state
+
+const Numbers = (props) => {
+  const [numbers, setNumbers] = useState(numberData);
+
+  // const addToDisplay = () => {
+  //   props.setDisplay(props.number);
+  // }
+  
   return (
-    <div>
-      {/* STEP 3 - Use .map() to iterate over your array data and return a button
-       component matching the name on the provided file. Pass
-       it any props needed by the child component*/}
+    <div className="number-container" style={{/* display: 'flex', flexFlow: 'row wrap', width: '75%' */}} >
+
+       {numbers.map((num, index) => (
+           <NumberButton 
+            number={num}
+            key={index}
+            // addToDisplay = { addToDisplay }
+          />
+       ))}
+
     </div>
   );
 };
