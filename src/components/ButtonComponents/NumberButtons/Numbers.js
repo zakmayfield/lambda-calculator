@@ -9,19 +9,16 @@ import { numbers as numberData } from '../../../data';
 
 const Numbers = (props) => {
   const [numbers, setNumbers] = useState(numberData);
-
-  // const addToDisplay = () => {
-  //   props.setDisplay(props.number);
-  // }
   
   return (
-    <div className="number-container" style={{/* display: 'flex', flexFlow: 'row wrap', width: '75%' */}} >
+    <div className="number-container">
 
        {numbers.map((num, index) => (
            <NumberButton 
             number={num}
             key={index}
-            // addToDisplay = { addToDisplay }
+            setDisplay={props.setDisplay}
+            displayNum={props.displayNum}
           />
        ))}
 

@@ -5,9 +5,11 @@ import Display from '../../DisplayComponents/Display';
 const NumberButton = (props) => {
   return (
     <>
-      <p className="number-button"
-      // onClick={ props.addToDisplay }
-      >{ props.number }</p>
+      <p className="number-button" onClick={ () => { 
+        console.log(`${props.number} clicked`);
+        console.log(props.displayNum);
+        props.setDisplay(props.displayNum + props.number)
+       } }>{ props.number }</p>
     </>
   );
 };

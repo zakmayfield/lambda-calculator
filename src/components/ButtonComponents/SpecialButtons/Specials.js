@@ -4,7 +4,7 @@ import SpecialButton from './SpecialButton';
 
 import { specials as specialsData } from '../../../data';
 
-const Specials = () => {
+const Specials = (props) => {
   const [specials, setSpecials] = useState(specialsData);
 
   return (
@@ -14,6 +14,8 @@ const Specials = () => {
         <SpecialButton 
           special={spec}
           key={index}
+          setDisplay={props.setDisplay}
+          displayNum={props.displayNum}
         />
        ))}
     </div>
