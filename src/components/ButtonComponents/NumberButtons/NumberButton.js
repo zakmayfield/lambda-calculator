@@ -1,9 +1,17 @@
 import React from "react";
 
-const NumberButton = () => {
+import Display from '../../DisplayComponents/Display';
+
+const NumberButton = (props) => {
   return (
     <>
-      {/* Display a button element rendering the data being passed down from the parent container on props */}
+      <p className="number-button" onClick={ () => { 
+        console.log(`${props.number} clicked`);
+        console.log(props.displayNum);
+        props.setDisplay(props.displayNum + props.number)
+       } }>{ props.number }</p>
     </>
   );
 };
+
+export default NumberButton
